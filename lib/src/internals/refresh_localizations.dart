@@ -75,6 +75,7 @@ class RefreshLocalizations {
     'it': ItRefreshString(),
     'ja': JpRefreshString(),
     'de': DeRefreshString(),
+    'pt': PtRefreshString()
   };
 
   RefreshString get currentLocalization {
@@ -98,7 +99,7 @@ class RefreshLocalizationsDelegate
 
   @override
   bool isSupported(Locale locale) {
-    return ['en', 'zh', 'fr', 'ru', 'uk', 'ja', 'it', 'de']
+    return ['en', 'zh', 'fr', 'ru', 'uk', 'ja', 'it', 'de', 'pt']
         .contains(locale.languageCode);
   }
 
@@ -436,4 +437,40 @@ class DeRefreshString implements RefreshString {
 
   @override
   String refreshingText = "Aktualisiere…";
+}
+
+/// Portuguese
+class PtRefreshString implements RefreshString {
+  @override
+  String canLoadingText = "Solte para carregar mais";
+
+  @override
+  String canRefreshText = "Solte para recarregar";
+
+  @override
+  String canTwoLevelText = "Solte para entrar no segundo nível";
+
+  @override
+  String idleLoadingText = "Puxe para carregar mais";
+
+  @override
+  String idleRefreshText = "Puxe para baixo para Recarregar";
+
+  @override
+  String loadFailedText = "Erro de carregamento";
+
+  @override
+  String loadingText = "Carregando…";
+
+  @override
+  String noMoreText = "Não há mais dados";
+
+  @override
+  String refreshCompleteText = "Recarregamento concluído";
+
+  @override
+  String refreshFailedText = "Recarregamento falhou";
+
+  @override
+  String refreshingText = "Recarregando…";
 }
